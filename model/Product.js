@@ -12,6 +12,10 @@ const productSchema = new Schema({
     thumbnail: { type: String, required: true },
     images: { type: [String], required: true },
     deleted: { type: Boolean, default: false },
+    expiry: {type: Date, required :true, default: Date.now },
+    
+    sale: { type: Number, default:0},
+
 })
 
 {/*

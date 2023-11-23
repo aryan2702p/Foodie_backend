@@ -8,6 +8,10 @@ const userSchema = new Schema({
   addresses: { type: [Schema.Types.Mixed] }, 
   // TODO:  We can make a separate Schema for this
   name: { type: String },
+  points: {type: Number,required: true, default:0 },
+  rank: {type: String,required: true, default: 'Newbie'},
+  lastLogin: { type: Date, required: true, default: Date.now },
+  
   salt: Buffer
 });
 
