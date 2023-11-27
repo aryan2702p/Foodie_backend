@@ -74,3 +74,15 @@ exports.fetchOrdersByUser = async (req, res) => {
     }
   };
 
+  exports.fetchAdminOrders=async(req,res)=>{
+    try {
+      const orders = await Order.find({});
+      
+      res.status(200).json(orders);
+      // console.log(users)
+    } catch (err) {
+      res.status(400).json(err);
+    }
+
+  }
+
