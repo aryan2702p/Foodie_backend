@@ -14,9 +14,9 @@ exports.createProduct = async (req, res) => {
 
 exports.fetchAllProducts = async (req, res) => {
   
-  let condition = {}
-  if(!req.query.admin){
-      condition.deleted = {$ne:true}
+  let condition = { stock: { $gt: 2 } }; // Adding the stock condition
+  if (!req.query.admin) {
+    condition.deleted = { $ne: true };
   }
 
   let query = Product.find(condition);

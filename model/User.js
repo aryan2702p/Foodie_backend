@@ -5,9 +5,10 @@ const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: Buffer, required: true },
   role: { type: String, required: true, default:'user' },
-  name: { type: String },
+  name: { type: String, default: 'New User' },
   points: {type: Number,required: true, default:0 },
-  rank: {type: String,required: true, default: 'Newbie'},
+  contact: {type: Number,required: true, default:987654321 },
+ 
   lastLogin: { type: Date, required: true, default: Date.now },
   
   salt: Buffer

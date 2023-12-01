@@ -7,7 +7,13 @@ const orderSchema = new Schema({
   totalItems: { type: Number },
   user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   status: { type: String, default: 'pending' },
-  time: { type: Date, default: Date.now}
+  time: { type: Date, default: Date.now},
+  razorpayPaymentId: {
+    type: String,
+    required: true
+  }
+  
+
 
 });
 
