@@ -9,7 +9,7 @@ from langchain.llms import OpenAI
 import os
 
 
-os.environ["OPENAI_API_KEY"] = "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"
+# os.environ["OPENAI_API_KEY"] = ""
 
 
 pdfreader = PdfReader('jiit_onlinecafe_doc.pdf')
