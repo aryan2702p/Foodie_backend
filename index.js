@@ -9,6 +9,7 @@ const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
+require('dotenv').config();
 
 const { createProduct } = require('./controller/Product');
 const productsRouter = require('./routes/Product');
@@ -36,11 +37,12 @@ server.use('/auth', authRouter.router);
 server.use('/cart',  cartRouter.router);
 server.use('/orders',  ordersRouter.router);
 
-
+const mongodb_uri = process.env.MONGODB_URI;
 main().catch((err) => console.log(err));
 
+
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/online');
+  await mongoose.connect(mongodb_uri);
   console.log('database connected');
 }
 
